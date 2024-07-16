@@ -1,30 +1,30 @@
 def hanoi(n, source, target, auxiliary):
     """
-    Résout le problème de la Tour d'Hanoi avec n disques entre trois bâtonnets.
+    Solves the Hanoi Tower problem with n discs between three sticks.
     
     Args:
-    n (int): Nombre de disques.
-    source (str): Bâtonnet source.
-    target (str): Bâtonnet cible.
-    auxiliary (str): Bâtonnet auxiliaire.
+    n (int): Number of disks.
+    source (str): Source stick.
+    target (str): Target stick.
+    auxiliary (str): Auxiliary stick.
     """
     if n > 0:
-        # Déplace n-1 disques de la source à l'auxiliaire, en passant par la cible
+        # Moves n-1 disks from source to auxiliary, through target
         hanoi(n-1, source, auxiliary, target)
         
-        # Déplace le disque restant de la source à la cible
+        # Moves the remaining disk from source to target
         print(f"{source} -> {target}")
         
-        # Déplace les n-1 disques de l'auxiliaire à la cible, en passant par la source
+        # Moves n-1 disks from auxiliary to target, through source
         hanoi(n-1, auxiliary, target, source)
 
-# Fonction principale pour lire l'entrée utilisateur et appeler la fonction hanoi
+# Main function to read user input and call hanoi function
 def main():
-    # Lire l'entrée utilisateur
-    input_str = input("Entrez le nombre de disques suivi du nombre de bâtonnets séparés par une virgule: ")
+    # Read user entry
+    input_str = input("Enter the number of disks followed by the number of sticks separated by a comma: ")
     disks, pegs = map(int, input_str.split(','))
     
-    # Appeler la fonction hanoi avec les paramètres appropriés
+    # Call hanoi function with appropriate settings
     hanoi(disks, '1', '2', '3')
 
 if __name__ == "__main__":
