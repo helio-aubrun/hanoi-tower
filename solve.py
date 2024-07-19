@@ -28,7 +28,7 @@ class hanoi:
     # Main function to read user input and call hanoi function
     def main(self):
         # Read user entry
-        input_str = input("Enter the number of disks followed by the number of sticks separated by a comma: ")
+        input_str = "5,3" #input("Enter the number of disks followed by the number of sticks separated by a comma: ")
         disks, pegs = map(int, input_str.split(','))
         
         # Call hanoi function with appropriate settings
@@ -37,3 +37,4 @@ class hanoi:
 if __name__ == "__main__":
     main = hanoi()
     main.main()
+    print (main.path)
